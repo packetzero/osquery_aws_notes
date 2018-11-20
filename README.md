@@ -28,6 +28,9 @@ In this scenario, a server provides Access Keys, along with aws_session_token in
 ## Setup
 [Setting up for AWS tests](./setup.md)
 
+## Operation
+For each test case, the script creates a configuration file and runs `build/darwin/osquery/aws_logger_integration_tests` binary, with the `AWS_KINESIS_TEST_CFG` environment variable set to the path of the configuration file.  After each test, the configuration file is deleted.  The binary is simply `osquery/logger/plugins/tests/aws_logger_integration_tests.cpp` compiled and linked with osquery libraries and gtest.
+
 ## Usage
 ```
 $ ruby tools/tests/aws/aws-integration-tests.rb
@@ -41,5 +44,30 @@ Usage: aws-integration-tests [options]
 ```
 
 ## Example Output
+Running with a stream and role, without a local proxy for endpoint_override will look like the following.  If any of the test output does not look right, then the tests stdout will be included.
+```
+$ ruby tools/tests/aws/aws-integration-tests.rb -s osquery-kinesis-stream -r "arn:aws:iam::123456789012:role/osquery-kinesis-streams"
+-------------------------------------
+Running 'local_user_creds'
+:SUCCESS
+-------------------------------------
+Running 'osquery_assume_role'
+:SUCCESS
+-------------------------------------
+Running 'provided_session_token'
+:SUCCESS
+-------------------------------------
+:SKIPPING endpoint_override_provided_session (no local proxy)
+-------------------------------------
+:SKIPPING endpoint_override (no local proxy)
+-------------------------------------
+Running 'fail_user_creds_invalid'
+:SUCCESS
+-------------------------------------
+Running 'fail_invalid_sts_role'
+:SUCCESS
+```
 
-[Test run output](./example-verbose-output.txt)
+## Verbose Output
+The `--verbose` option will give stdout from all tests.  The following is an example of such, but does not include the configuration output.
+[Verbose Output Example](./example-verbose-output.txt)
