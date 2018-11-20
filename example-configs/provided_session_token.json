@@ -1,0 +1,16 @@
+{
+  "options": {
+    "aws_region": "us-east-1",
+    "aws_access_key_id": "ASIAJEXAMPLEXEG2JICEA",
+    "aws_secret_access_key": "ggWVvEXAMPLE9Du6VreZxEm2kmFF",
+    "logger_plugin": "aws_kinesis",
+    "aws_session_token": "FQoGEXAMPLExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx3wU=",
+    "aws_endpoint_override": "",
+    "aws_kinesis_stream": "osquery-kinesis-stream",
+    "aws_kinesis_period": 1,
+    "aws_kinesis_max_retry": 2,
+    "disable_logging": false,
+    "utc": true,
+    "aws_sts_arn_role": ""
+  }
+}

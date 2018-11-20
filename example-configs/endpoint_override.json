@@ -1,0 +1,16 @@
+{
+  "options": {
+    "aws_region": "us-east-1",
+    "aws_access_key_id": "AKIAJEXAMPLEXEG2JICEA",
+    "aws_secret_access_key": "rWrVtG5xxxxxxxxxxxxxxxx",
+    "logger_plugin": "aws_kinesis",
+    "aws_session_token": "",
+    "aws_endpoint_override": "my.example.com:443",
+    "aws_kinesis_stream": "osquery-kinesis-stream",
+    "aws_kinesis_period": 1,
+    "aws_kinesis_max_retry": 2,
+    "disable_logging": false,
+    "utc": true,
+    "tls_server_certs": "/path/to/trusted_certificates.pem"
+  }
+}
