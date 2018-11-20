@@ -1,4 +1,4 @@
-# Setup for Integration Tests
+# Setup for AWS Logger Integration Tests
 
 This will guide you through the creation of AWS user and role, as well as the docker proxy to test aws_endpoint_override setting.
 

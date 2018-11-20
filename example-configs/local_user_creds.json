@@ -1,6 +1,6 @@
 {
   "options": {
-    "aws_region": "us-east-2",
+    "aws_region": "us-east-1",
     "aws_access_key_id": "AKIAJEXAMPLEXEG2JICEA",
     "aws_secret_access_key": "rWrVtG5xxxxxxxxxxxxxxxx",
     "logger_plugin": "aws_kinesis",

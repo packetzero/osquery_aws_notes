@@ -1,0 +1,141 @@
+$ ruby tools/tests/aws/aws-integration-tests.rb -s osquery-kinesis-stream -r "arn:aws:iam::123456789012:role/osquery-kinesis-streams" --verbose
+-------------------------------------
+Running 'local_user_creds'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:49.013568 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:49.014457 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:49.014781 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:11:49.349669 265674752 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2007 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2007 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2007 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'osquery_assume_role'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:51.057435 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:51.058255 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:51.058311 2595595136 aws_util.cpp:247] Generating new AWS STS credentials
+I1120 16:11:51.058328 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:51.412726 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:11:51.699486 59359232 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2357 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2357 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2357 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'provided_session_token'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:53.448676 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:53.449529 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:53.449590 2595595136 aws_util.cpp:238] Using provided aws_session_token for id:ASIAJEXAMPLEXEG2JICEA
+I1120 16:11:53.449887 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:11:53.662544 79683584 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2007 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2007 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2007 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'endpoint_override_provided_session'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:55.492206 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:55.493023 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:55.493079 2595595136 aws_util.cpp:238] Using provided aws_session_token for id:ASIAJEXAMPLEXEG2J3GW2
+I1120 16:11:55.493360 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:11:55.699863 112984064 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2003 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2003 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2003 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'endpoint_override'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:57.525657 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:57.526407 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:57.526682 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:11:57.740120 133869568 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2006 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2006 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2006 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'fail_user_creds_invalid'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:11:59.568774 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:11:59.569602 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:11:59.569931 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+E1120 16:11:59.860383 157634560 aws_log_forwarder.h:247] aws_kinesis: Complete request failure: The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.
+E1120 16:12:01.861196 157634560 aws_log_forwarder.h:247] aws_kinesis: Complete request failure: The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.
+E1120 16:12:01.861230 157634560 aws_log_forwarder.h:78] aws_kinesis logger: Failed to write the following records:
+Record #1: {"some":"value","zero":"0","vrai":"true","log_type":"result"}
+I1120 16:12:01.861240 157634560 buffered.cpp:73] Error sending results to logger: The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.
+[       OK ] AwsLoggerIntegrationTests.log_one (2293 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2293 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2293 ms total)
+[  PASSED  ] 1 test.
+-------------------------------------
+Running 'fail_invalid_sts_role'
+:SUCCESS
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from AwsLoggerIntegrationTests
+[ RUN      ] AwsLoggerIntegrationTests.log_one
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W1120 16:12:01.911284 2595595136 aws_logger_integration_tests.cpp:92] loaded config file:/tmp/aws_int_test.conf
+I1120 16:12:01.912166 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+I1120 16:12:01.912225 2595595136 aws_util.cpp:247] Generating new AWS STS credentials
+I1120 16:12:01.912242 2595595136 aws_util.cpp:469] Using AWS region from flag: us-east-2
+E1120 16:12:02.200039 2595595136 aws_util.cpp:280] Failed to create STS temporary credentials for role:arn:aws:iam::123456789012:role/osquery-kinesis-streams-nosuch message:Access denied
+I1120 16:12:02.200116 2595595136 aws_kinesis.cpp:101] Kinesis logging initialized with stream: osquery-kinesis-stream
+I1120 16:12:02.200388 262582272 aws_util.cpp:247] Generating new AWS STS credentials
+I1120 16:12:02.200425 262582272 aws_util.cpp:469] Using AWS region from flag: us-east-2
+E1120 16:12:02.490936 262582272 aws_util.cpp:280] Failed to create STS temporary credentials for role:arn:aws:iam::123456789012:role/osquery-kinesis-streams-nosuch message:Access denied
+I1120 16:12:02.792367 262582272 aws_log_forwarder.h:222] aws_kinesis: Successfully sent 1 out of 1 log records
+[       OK ] AwsLoggerIntegrationTests.log_one (2290 ms)
+[----------] 1 test from AwsLoggerIntegrationTests (2290 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (2291 ms total)
+[  PASSED  ] 1 test.

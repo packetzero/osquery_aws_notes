@@ -1,4 +1,4 @@
-# Notes on AWS Logger Plugins
+# Notes on osquery AWS Logger Plugins
 In addition to the integration tests, this guide outlines some best practices on AWS logger plugin usage. *My focus was on Kinesis, but should be relevant to Firehose as well*.
 
 ## Credential Considerations
